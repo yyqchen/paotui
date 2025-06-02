@@ -1,0 +1,14 @@
+/* pages/user/user.wxss 样式优化 */
+.container {
+  padding: 30rpx;
+}
+
+.function-buttons {
+  margin-top: 100rpx;
+}
+
+.btn {
+  margin: 40rpx 0;
+  background-color: #07c160;
+  color: white;
+}
