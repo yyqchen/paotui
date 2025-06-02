@@ -1,0 +1,6 @@
+<!-- pages/service/service.wxml 客服页面 -->
+<view class="container">
+  <text>客服工作时间：9:00-18:00</text>
+  <text>联系电话：405-778-896</text>
+  <button open-type="contact">在线客服</button>
+</view>

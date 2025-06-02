@@ -1,0 +1,8 @@
+<!-- pages/user/user.wxml 添加功能按钮 -->
+<view class="container">
+  <view class="function-buttons">
+    <button class="btn" bindtap="navigateToCreate">今日待接任务</button>
+    <button class="btn" bindtap="navigateToOrder">今日已完成任务</button>
+    
+  </view>
+</view>
