@@ -1,0 +1,75 @@
+<!-- pages/my-task/my-task.wxml -->
+<view class="container">
+  <!-- 用户信息和余额区域 -->
+  <view class="user-section">
+    <view class="user-info">
+      <image class="avatar" src="{{userInfo.avatarUrl || '/images/default-avatar.png'}}"></image>
+      <text class="nickname">{{userInfo.nickname || '用户昵称'}}</text>
+    </view>
+    <view class="balance-info">
+      <view class="balance-title">账户余额</view>
+      <view class="balance-amount">¥{{balance || '0.00'}}</view>
+      <view class="balance-actions">
+        <button class="action-btn recharge-btn" bindtap="showRechargeOptions">充值</button>
+        <button class="action-btn withdraw-btn" bindtap="onWithdraw">提现</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 任务列表区域 -->
+  <view class="task-tabs">
+    <view class="tab {{currentTab === 0 ? 'active' : ''}}" bindtap="switchTab" data-tab="0">
+      我发布的
+    </view>
+    <view class="tab {{currentTab === 1 ? 'active' : ''}}" bindtap="switchTab" data-tab="1">
+      我接受的
+    </view>
+  </view>
+
+  <!-- 任务列表内容 -->
+  <view class="task-list" wx:if="{{currentTab === 0}}">
+    <block wx:if="{{!loading && publishedTasks.length > 0}}">
+      <view class="task-item" wx:for="{{publishedTasks}}" wx:key="taskId">
+        <!-- 任务内容保持不变 -->
+      </view>
+    </block>
+    <view class="empty-state" wx:elif="{{!loading && publishedTasks.length === 0}}">
+      <text>暂无发布的任务</text>
+    </view>
+  </view>
+
+  <view class="task-list" wx:if="{{currentTab === 1}}">
+    <block wx:if="{{!loading && acceptedTasks.length > 0}}">
+      <view class="task-item" wx:for="{{acceptedTasks}}" wx:key="taskId">
+        <!-- 任务内容保持不变 -->
+      </view>
+    </block>
+    <view class="empty-state" wx:elif="{{!loading && acceptedTasks.length === 0}}">
+      <text>暂无接受的任务</text>
+    </view>
+  </view>
+
+  <!-- 充值选项弹窗 - 修改为纯文字版本 -->
+  <view class="modal" wx:if="{{showRechargeModal}}">
+    <view class="modal-mask" bindtap="hideRechargeModal"></view>
+    <view class="modal-content">
+      <view class="modal-title">选择充值方式</view>
+      <view class="modal-options">
+        <button class="recharge-option wechat" bindtap="onWechatRecharge">
+          <text class="option-text">微信充值</text>
+        </button>
+        <button class="recharge-option alipay" bindtap="onAlipayRecharge">
+          <text class="option-text">支付宝充值</text>
+        </button>
+      </view>
+      <view class="modal-footer">
+        <button class="cancel-btn" bindtap="hideRechargeModal">取消</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 加载状态 -->
+  <view class="loading-state" wx:if="{{loading}}">
+    <text>加载中...</text>
+  </view>
+</view>

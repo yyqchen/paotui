@@ -1,0 +1,9 @@
+<view class="container">
+  <view class="banner">校园跑腿服务</view>
+  
+  <view class="actions">
+    <button class="btn" bindtap="navigateToPublish">发布任务</button>
+    <button class="btn" bindtap="navigateToTaskList">查看任务</button>
+    <button class="btn" bindtap="navigateToMyTask">我的任务</button>
+  </view>
+</view>

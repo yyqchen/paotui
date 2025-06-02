@@ -1,0 +1,59 @@
+<!-- pages/login/login.wxml -->
+<view class="container">
+  <view class="header">
+    <view class="logo-box">
+      <view class="logo-text">校园跑腿</view>
+      <text class="subtitle">让校园生活更便捷</text>
+    </view>
+  </view>
+
+  <view class="content">
+    <view class="welcome-text">欢迎使用</view>
+    
+    <view class="auth-info">
+      <view class="auth-title">授权说明</view>
+      <view class="auth-desc">为了提供更好的服务，我们需要获取您的以下信息：</view>
+      <view class="auth-list">
+        <view class="auth-item">
+          <text class="dot">•</text>
+          <text>微信头像</text>
+        </view>
+        <view class="auth-item">
+          <text class="dot">•</text>
+          <text>微信昵称</text>
+        </view>
+      </view>
+    </view>
+    
+    <view class="btn-area">
+      <!-- 新版本授权按钮 -->
+      <button 
+        wx:if="{{canIUseGetUserProfile}}"
+        class="auth-btn"
+        bindtap="getUserProfile"
+        loading="{{isLoading}}"
+        hover-class="auth-btn-hover">
+        微信一键登录
+      </button>
+
+      <!-- 旧版本授权按钮 -->
+      <button 
+        wx:else
+        class="auth-btn"
+        open-type="getUserInfo" 
+        bindgetuserinfo="getUserInfo"
+        loading="{{isLoading}}"
+        hover-class="auth-btn-hover">
+        微信一键登录
+      </button>
+    </view>
+  </view>
+
+  <view class="footer">
+    <view class="agreement-box">
+      <text class="agreement">登录即表示同意</text>
+      <text class="agreement-link" bindtap="viewAgreement">《用户协议和隐私政策》</text>
+    </view>
+    <text class="copyright">Copyright © 2024 校园跑腿</text>
+  </view>
+</view>

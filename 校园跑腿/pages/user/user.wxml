@@ -1,0 +1,8 @@
+<!-- pages/user/user.wxml 添加功能按钮 -->
+<view class="container">
+  <view class="function-buttons">
+    <button class="btn" bindtap="navigateToCreate">任务发布</button>
+    <button class="btn" bindtap="navigateTomyidea">个人信息</button>
+    <button class="btn" bindtap="navigateToService">客服售后</button>
+  </view>
+</view>

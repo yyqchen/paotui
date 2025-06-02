@@ -1,0 +1,8 @@
+<!-- pages/user/user.wxml 添加功能按钮 -->
+<view class="container">
+  <view class="function-buttons">
+    <button class="btn" bindtap="navigateToCreate">订单列表</button>
+    <button class="btn" bindtap="navigateToOrder">待接订单</button>
+    <button class="btn" bindtap="navigateToService">已完成订单</button>
+  </view>
+</view>

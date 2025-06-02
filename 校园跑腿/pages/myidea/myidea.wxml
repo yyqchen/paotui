@@ -1,0 +1,7 @@
+<!-- pages/myidea/myidea.wxml 客服页面 -->
+<view class="container">
+  <text>姓名：***</text>
+  <text>性别：男</text>
+  <text>已完成任务数量：</text>
+  <button open-type="contact">总共完成数量</button>
+</view>

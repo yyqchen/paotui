@@ -1,0 +1,241 @@
+/* pages/my-task/my-task.wxss */
+
+.container {
+  min-height: 100vh;
+  background-color: #f7f7f7;
+}
+
+/* 用户信息区域 */
+.user-section {
+  background-color: #ffffff;
+  padding: 40rpx 30rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+.avatar {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+  background-color: #f0f0f0;
+}
+
+.nickname {
+  font-size: 32rpx;
+  color: #333;
+  font-weight: 500;
+}
+
+/* 余额信息 */
+.balance-info {
+  background-color: #f8f9fa;
+  padding: 30rpx;
+  border-radius: 12rpx;
+}
+
+.balance-title {
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 10rpx;
+}
+
+.balance-amount {
+  font-size: 48rpx;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 30rpx;
+}
+
+.balance-actions {
+  display: flex;
+  justify-content: space-around;
+  gap: 20rpx;
+}
+
+.action-btn {
+  flex: 1;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  border: none;
+}
+
+.recharge-btn {
+  background-color: #1890ff;
+  color: #fff;
+}
+
+.withdraw-btn {
+  background-color: #52c41a;
+  color: #fff;
+}
+
+/* 任务标签页 */
+.task-tabs {
+  display: flex;
+  background-color: #fff;
+  padding: 0 30rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 20rpx 0;
+  font-size: 28rpx;
+  color: #666;
+  position: relative;
+}
+
+.tab.active {
+  color: #1890ff;
+  font-weight: 500;
+}
+
+.tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40rpx;
+  height: 4rpx;
+  background-color: #1890ff;
+  border-radius: 2rpx;
+}
+
+/* 任务列表 */
+.task-list {
+  padding: 20rpx;
+}
+
+.task-item {
+  background-color: #fff;
+  border-radius: 12rpx;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+}
+
+/* 充值弹窗 */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.modal-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  border-radius: 20rpx 20rpx 0 0;
+  padding: 40rpx 30rpx;
+  animation: slideUp 0.3s ease-out;
+}
+
+.modal-title {
+  text-align: center;
+  font-size: 32rpx;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 40rpx;
+}
+
+.modal-options {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40rpx;
+}
+
+.recharge-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 20rpx 40rpx;
+  border-radius: 8rpx;
+  min-width: 240rpx;
+  height: 100rpx;
+}
+
+.recharge-option::after {
+  border: none;
+}
+
+.wechat {
+  background-color: #07c160;
+}
+
+.alipay {
+  background-color: #1677ff;
+}
+
+.option-text {
+  font-size: 32rpx;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.modal-footer {
+  margin-top: 20rpx;
+}
+
+.cancel-btn {
+  background: none;
+  border: none;
+  color: #999;
+  font-size: 28rpx;
+}
+
+.cancel-btn::after {
+  border: none;
+}
+
+/* 动画效果 */
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* 加载状态 */
+.loading-state {
+  text-align: center;
+  padding: 30rpx;
+  color: #999;
+}
+
+/* 空状态 */
+.empty-state {
+  text-align: center;
+  padding: 60rpx 30rpx;
+  color: #999;
+}

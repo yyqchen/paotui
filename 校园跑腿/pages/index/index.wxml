@@ -1,0 +1,13 @@
+<!-- pages/index/index.wxml 修改服务列表 -->
+<view class="container">
+  <view class="banner">校园跑腿服务，随叫随到</view>
+  
+  <view class="service-list">
+    <block wx:for="{{services}}" wx:key="index">
+      <view class="service-item" bindtap="createOrder">
+        <text class="icon">{{item.icon}}</text>
+        <text>{{item.name}}</text>
+      </view>
+    </block>
+  </view>
+</view>

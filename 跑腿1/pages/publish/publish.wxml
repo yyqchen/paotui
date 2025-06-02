@@ -1,0 +1,72 @@
+<!-- pages/publish/publish.wxml -->
+<view class="container">
+  <form bindsubmit="onSubmit">
+    <view class="form-group">
+      <view class="form-label">任务标题</view>
+      <input class="form-input" 
+             name="title"
+             value="{{title}}"
+             placeholder="请输入任务标题"
+             bindinput="onTitleInput"
+             maxlength="50" />
+    </view>
+
+    <view class="form-group">
+      <view class="form-label">任务描述</view>
+      <textarea class="form-textarea" 
+                name="description"
+                value="{{description}}"
+                placeholder="请详细描述任务内容"
+                bindinput="onDescriptionInput"
+                maxlength="500" />
+    </view>
+
+    <view class="form-group">
+      <view class="form-label">任务报酬（元）</view>
+      <input class="form-input" 
+             name="reward"
+             value="{{reward}}"
+             type="digit"
+             placeholder="请输入任务报酬"
+             bindinput="onRewardInput" />
+    </view>
+
+    <view class="form-group">
+      <view class="form-label">任务地点</view>
+      <input class="form-input" 
+             name="location"
+             value="{{location}}"
+             placeholder="请输入任务地点"
+             bindinput="onLocationInput"
+             maxlength="100" />
+    </view>
+
+    <view class="form-group">
+      <view class="form-label">联系方式</view>
+      <input class="form-input" 
+             name="contact"
+             value="{{contact}}"
+             placeholder="请输入您的联系方式"
+             bindinput="onContactInput"
+             maxlength="50" />
+    </view>
+
+    <view class="form-tips">
+      <text>提示：</text>
+      <text>1. 请认真填写任务信息，确保信息真实有效</text>
+      <text>2. 任务发布后可在"我的任务"中查看和管理</text>
+      <text>3. 待接单状态下可以取消任务</text>
+    </view>
+
+    <view class="form-buttons">
+      <button class="cancel-btn" 
+              bindtap="onCancel"
+              hover-class="button-hover">取消</button>
+      <button class="submit-btn" 
+              form-type="submit"
+              disabled="{{isSubmitting}}"
+              loading="{{isSubmitting}}"
+              hover-class="button-hover">发布任务</button>
+    </view>
+  </form>
+</view>
